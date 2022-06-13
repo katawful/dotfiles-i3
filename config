@@ -43,13 +43,13 @@
   set_from_resource        $l-gray  i3wm.color15   #f0f0f0             
 
 ### Displays
-# # set up primary monitor
+# set up primary monitor
   exec --no-startup-id xrandr --output $monitor_one --primary
-# # set up second monitor
+# set up second monitor
   exec --no-startup-id xrandr --output $monitor_two --auto --left-of $monitor_one
-# # set up vertical monitor
-  exec --no-startup-id xrandr --output $monitor_three --rotate right --right-of $monitor_one
-  # exec --no-startup-id xrandr --output $monitor_three --auto --right-of $monitor_one
+# set up vertical monitor
+  # exec --no-startup-id xrandr --output $monitor_three --rotate right --right-of $monitor_one
+  exec --no-startup-id xrandr --output $monitor_three --auto --right-of $monitor_one
 # setup monitors
   exec --no-startup-id $HOME/.config/i3/i3-scripts.sh --monitorsetup
 # font for window titles
@@ -177,13 +177,15 @@
 # Layout manager
   bindsym $mod+Ctrl+l exec --no-startup-id i3-layout-manager
 # Open NeoVim
-  bindsym $mod+bracketleft exec --no-startup-id kitty nvim
+  # bindsym $mod+bracketleft exec --no-startup-id kitty nvim
+  bindsym $mod+bracketleft exec --no-startup-id neovide --multigrid
 # Open Vimwiki
   bindsym $mod+bracketright exec --no-startup-id kitty --class vimwiki nvim -c +VimwikiIndex +Goyo
 # Open VimwikiDiary
   bindsym $mod+Ctrl+d exec --no-startup-id kitty --class vimwiki nvim -c 'let g:startify_disable_at_vimenter = 1' +VimwikiMakeDiaryNote +Goyo 
 # Open ranger
-  bindsym $mod+o exec --no-startup-id kitty "ranger"
+  bindsym $mod+o exec --no-startup-id ~/.config/i3/i3-apps.sh --ranger
+  # bindsym $mod+o exec --no-startup-id kitty "ranger"
 # Open FireFox
   bindsym $mod+f exec --no-startup-id MOZ_X11_EGL=1 firefox
 # Open htop

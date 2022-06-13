@@ -13,6 +13,12 @@ htop ()
 	kitty "htop"
 }
 
+ranger ()
+{
+	export SHELL=$HOME/.local/bin/r.shell
+	kitty "ranger"
+}
+
 ## Launch conky
 # I use conky to show my system info at a glance
 conkyscript ()
@@ -56,4 +62,5 @@ case "$1" in
 	(--conky) conkyscript ;;
 	(--dolphin) dolphin "$@" ;;
 	(--pcsx2) pcsx2 "$@" ;;
+	(--ranger) ranger ;;
 esac
