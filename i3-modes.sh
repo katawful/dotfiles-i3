@@ -38,10 +38,10 @@ i3capture ()
         activewinscrot
         ;;
       screen-1)
-        scrot -a 1921,0,1920,1080 ~/Pictures/SCREEN/"$FILE".png
+        scrot -a 1921,420,1920,1080 ~/Pictures/SCREEN/"$FILE".png
         ;;
       screen-2)
-        scrot -a 0,0,1920,1080 ~/Pictures/SCREEN/"$FILE".png
+        scrot -a 0,420,1920,1080 ~/Pictures/SCREEN/"$FILE".png
         ;;
       rectangle)
         scrot -z -s -f ~/Pictures/RECTANGLE/"$FILE".png
